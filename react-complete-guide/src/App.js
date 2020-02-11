@@ -7,9 +7,9 @@ class App extends Component {
   // props are set and passed from outside
   state = {
     persons: [
-      { name: 'Shaneen', age: 28 },
-      { name: 'Mark', age: 29 },
-      { name: 'Bianx', age: 16 }
+      { id: 'afsd', name: 'Shaneen', age: 28 },
+      { id: 'eqrwe', name: 'Mark', age: 29 },
+      { id: 'sdfs', name: 'Bianx', age: 16 }
     ],
     otherState: 'some other value',
     showPersons: false
@@ -56,7 +56,9 @@ class App extends Component {
             return <Person 
               click={() => this.deletePersonHandler(index)}
               name={person.name} 
-              age={person.age} />
+              age={person.age} 
+              // key should not be index since a list may change and index will change too
+              key={person.id} />
           })}
         </div> 
       );

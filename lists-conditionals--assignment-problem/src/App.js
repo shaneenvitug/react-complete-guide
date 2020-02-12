@@ -19,7 +19,7 @@ class App extends Component {
 
   deleteLetterHandler = (letterIndex) => {
     const lettersArray = [...this.state.word.split('')];
-    const newWord = lettersArray.splice(letterIndex, 1);
+    lettersArray.splice(letterIndex, 1);
     const word = lettersArray.join('');
     this.setState({ 
       word,

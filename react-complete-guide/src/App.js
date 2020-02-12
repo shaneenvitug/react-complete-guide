@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 class App extends Component {
   // state is managed from inside the component, *state property is only available in components that extends component (class based react components)
   // props are set and passed from outside
@@ -52,13 +53,12 @@ class App extends Component {
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-            return <Person 
+          return <ErrorBoundary key={person.id}> {/*key has to always be at the outer element with the map method*/}
+            <Person 
               click={() => this.deletePersonHandler(index)}
               name={person.name} 
-              age={person.age} 
-              // key should not be index since a list may change and index will change too
-              key={person.id} 
-              changed={(event) => this.nameChangedHandler(event, person.id)} />
+              age={person.age}   
+              changed={(event) => this.nameChangedHandler(event, person.id)} /></ErrorBoundary>
           })}
         </div> 
       );

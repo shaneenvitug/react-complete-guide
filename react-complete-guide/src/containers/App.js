@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classes from './App.css';
-import Person from './Person/Person';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Person from '../components/Persons/Person/Person';
 class App extends Component {
   // state is managed from inside the component, *state property is only available in components that extends component (class based react components)
   // props are set and passed from outside
@@ -47,18 +46,18 @@ class App extends Component {
 
   render() {
     let persons = null;
-    let btnClass = [classes.Button];
+    let btnClass = '';
 
     if (this.state.showPersons) {
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-          return <ErrorBoundary key={person.id}> {/*key has to always be at the outer element with the map method*/}
-            <Person 
+          return <Person 
               click={() => this.deletePersonHandler(index)}
               name={person.name} 
-              age={person.age}   
-              changed={(event) => this.nameChangedHandler(event, person.id)} /></ErrorBoundary>
+              age={person.age} 
+              key={person.id}  
+              changed={(event) => this.nameChangedHandler(event, person.id)} />
           })}
         </div> 
       );
@@ -80,7 +79,7 @@ class App extends Component {
         <h1>Hi, I'm a React App</h1>
         <p className={assignedClasses.join(' ')}>This is really working!</p>
         <button 
-          className={btnClass.join(' ')}
+          className={btnClass}
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>

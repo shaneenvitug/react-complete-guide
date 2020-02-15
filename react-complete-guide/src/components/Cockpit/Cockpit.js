@@ -5,7 +5,13 @@ const cockpit = (props) => {
   //componentDidMount and componentDidUpdate combined in one effect
   useEffect(() => {
     console.log('[Cockpit.js] useEffect');
-  })
+    // Http request...
+    setTimeout(() => {
+      alert('Saved data to cloud!');
+    }, 1000);
+  }, []); // if empty array, will only run once same as componentDidMount
+
+  // useEffect();
 
   const assignedClasses = [];
   let btnClass = '';

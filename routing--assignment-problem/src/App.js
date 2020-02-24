@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
@@ -12,8 +12,8 @@ class App extends Component {
           <header>
             <nav>
               <ul>
-                <li><a href="/courses">All Courses</a></li>
-                <li><a href="/users">Users</a></li>
+                <li><Link to="/courses">All Courses</Link></li>
+                <li><Link to="/users">Users</Link></li>
               </ul>
             </nav>
           </header>
@@ -23,7 +23,7 @@ class App extends Component {
 
           <ol style={{textAlign: 'left'}}>
             <li><strong>DONE!</strong> Add Routes to load "Users" and "Courses" on different pages (by entering a URL, without Links)</li>
-            <li>Add a simple navigation with two links => One leading to "Users", one leading to "Courses"</li>
+            <li><strong>DONE!</strong> Add a simple navigation with two links => One leading to "Users", one leading to "Courses"</li>
             <li>Make the courses in "Courses" clickable by adding a link and load the "Course" component in the place of "Courses" (without passing any data for now)</li>
             <li>Pass the course ID to the "Course" page and output it there</li>
             <li>Pass the course title to the "Course" page - pass it as a param or score bonus points by passing it as query params (you need to manually parse them though!)</li>

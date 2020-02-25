@@ -10,7 +10,7 @@ class Course extends Component {
         return (
             <div>
                 <h1>title</h1>
-                <p>You selected the Course with ID: </p>
+                <p>You selected the Course with ID: {this.props.match.params.id}</p>
             </div>
         );
     }

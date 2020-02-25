@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import Courses from './containers/Courses/Courses';
+import Course from './containers/Course/Course';
 import Users from './containers/Users/Users';
 
 import './App.css';
@@ -21,6 +22,7 @@ class App extends Component {
           </header>
 
           <Route path="/courses" exact component={Courses} />
+          <Route path="/courses/:id" exact component={Course} />
           <Route path="/users" exact component={Users} />
           
           <ol style={{textAlign: 'left'}}>

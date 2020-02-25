@@ -22,7 +22,11 @@ class App extends Component {
           </header>
 
           <Route path="/courses" exact component={Courses} />
-          <Route path="/course/:id" exact component={Course} />
+          <Route 
+            path="/course/:id/:title" 
+            exact 
+            component={Course} 
+            />
           <Route path="/users" exact component={Users} />
           
           <ol style={{textAlign: 'left'}}>

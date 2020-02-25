@@ -13,9 +13,9 @@ class Courses extends Component {
     }
 
     render () {
-        let course = this.state.courses.map(course => {
-            return <Course courses={this.state.courses} title={course.title} id={course.id} />
-            })
+        // let course = this.state.courses.map(course => {
+        //     return <Course courses={this.state.courses} title={course.title} id={course.id} />
+        //     })
             
         return (
             <div>
@@ -24,7 +24,7 @@ class Courses extends Component {
                     {
                         this.state.courses.map( course => {
                             return (
-                                <Link to={"/course/" + course.id} key={course.id}>
+                                <Link to={`/course/${course.id}/${course.title}`} key={course.id}>
                                     <article className="Course" >{course.title}</article>
                                 </Link>
                             );
